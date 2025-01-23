@@ -1,6 +1,27 @@
 #include <stdio.h>
 
+void GetMatrix( int **value, int *row, int *col ) ;
+void PrintMatrix( int **value, int row, int col ) ;
+
 int main() {
-    //YOUR CODE HERE
+    int *data, m = 3, n = 3 ;
+    data = new int[ m * n ] ;
+    GetMatrix( &data, &m, &n ) ;
+    PrintMatrix( &data, m, n ) ;
     return 0 ;
 }//end function
+
+void GetMatrix( int **value, int *row, int *col ) {
+    printf( "Enter elements of the matrix:\n" ) ;
+    for ( int i = 0; i < *row; i++ ) {
+        for ( int j = 0; j < *col; j++ ) {
+            if ( *row == '\n' && j != *col - 1 ) {
+                    printf( "Error: Incorrect number of elements." ) ;
+                    exit( 1 ) ;
+            } else {
+                scanf( "%d", &value[ i * *col + j ] ) ;
+            }
+            
+        }
+    }
+}
