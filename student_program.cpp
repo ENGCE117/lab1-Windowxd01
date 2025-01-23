@@ -11,13 +11,12 @@ int main() {
     return 0 ;
 }//end function
 
-void GetMatrix( int **value, int *row, int *col ) {
+void GetMatrix( int value[], int *row, int *col ) {
     printf( "Enter elements of the matrix:\n" ) ;
     for ( int i = 0; i < *row; i++ ) {
         for ( int j = 0; j < *col; j++ ) {
             if ( *row == '\n' && j != *col - 1 ) {
                     printf( "Error: Incorrect number of elements." ) ;
-                    exit( 1 ) ;
             } else {
                 scanf( "%d", &value[ i * *col + j ] ) ;
             }
